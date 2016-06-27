@@ -1,0 +1,10 @@
+<h2>To Do List</h2>
+<p><i>List of Tasks</i></p>
+<div *ngFor="let todo of todos" (click)="selectTodo(todo)">
+  {{todo.subject}}
+</div>
+<!--<todo-detail *ngIf="selectedTodo" [todo]="selectedTodo"></todo-detail>-->
+<div *ngIf="selectedTodo">
+    <h2>Selected todo: {{selectedTodo.subject}}</h2>
+    <p>{{selectedTodo.content}}</p>
+</div>
