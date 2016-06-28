@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import {Todo} from '../shared/todo.model';
+import {TodoModel} from '../shared/todo.model';
 import {TodoService} from '../shared/todo.service';
 
 
@@ -12,8 +12,8 @@ import {TodoService} from '../shared/todo.service';
   providers:   [TodoService]
 })
 export class TodoListComponent implements OnInit {
-  todos: Todo[];
-  selectedTodo: Todo;
+  todos: TodoModel[];
+  selectedTodo: TodoModel;
   
   constructor(private service: TodoService) { }
   
@@ -21,7 +21,7 @@ export class TodoListComponent implements OnInit {
     this.todos = this.service.getTodos();
   }
   
-  selectTodo(todo: Todo) { this.selectedTodo = todo; }
+  selectTodo(todo: TodoModel) { this.selectedTodo = todo; }
 
   /* example of dynamic styling*/
   setTodoStyles(item:any){
