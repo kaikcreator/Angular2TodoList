@@ -22,4 +22,13 @@ export class TodoListComponent implements OnInit {
   }
   
   selectTodo(todo: Todo) { this.selectedTodo = todo; }
+
+  /* example of dynamic styling*/
+  setTodoStyles(item:any){
+    let styles= {
+        'text-decoration': item.isDone ? 'line-through' : 'none',
+        'font-weight': item.isImportant ? '600' : 'normal',
+    };
+    return styles;
+}
 }
