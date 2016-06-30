@@ -2,13 +2,15 @@ import { Component, OnInit } from '@angular/core';
 
 import {TodoModel} from '../shared/todo.model';
 import {TodoService} from '../shared/todo.service';
+import {TodoDetailComponent} from '../todo-detail/todo-detail.component'; 
 
 
 @Component({
   selector:    'todo-list',
+  moduleId:    module.id,  
   templateUrl: 'todo-list.component.html',
-  moduleId:    module.id,
-  //directives:  [TodoDetailComponent],
+  styleUrls: ['todo-list.component.css'],
+  directives:  [TodoDetailComponent],
   providers:   [TodoService]
 })
 export class TodoListComponent implements OnInit {
@@ -30,5 +32,5 @@ export class TodoListComponent implements OnInit {
         'font-weight': item.isImportant ? '600' : 'normal',
     };
     return styles;
-}
+  }
 }

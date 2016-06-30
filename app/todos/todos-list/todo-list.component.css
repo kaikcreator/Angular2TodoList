@@ -1,0 +1,9 @@
+:host{
+    padding: 10px;
+    display: block;
+}
+
+.todo-item{
+    cursor:pointer;
+    margin: 10px 0px;
+}
