@@ -6,13 +6,19 @@
         <div class="form-group">
           <label for="subject">Subject</label>
           <input type="text" class="form-control" required
-            [(ngModel)]="model.subject" name="subject">
+            [(ngModel)]="model.subject" name="subject" #subjectState="ngModel">
+            <div [hidden]="subjectState.valid || subjectState.pristine" class="alert alert-danger">
+              Subject is required
+            </div>
         </div>
 
         <div class="form-group">
           <label for="content">Content</label>
           <input type="text" class="form-control" required
-            [(ngModel)]="model.content" name="content">
+            [(ngModel)]="model.content" name="content" #contentState="ngModel">
+            <div [hidden]="contentState.valid || contentState.pristine" class="alert alert-danger">
+              Content is required
+            </div>
         </div>
 
         <div class="form-group">
