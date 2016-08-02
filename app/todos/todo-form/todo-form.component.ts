@@ -12,6 +12,4 @@ export class TodoFormComponent {
   model = new TodoModel('new subject', 'new content', false, false);
   submitted = false;
   onSubmit() { this.submitted = true; }
-  // TODO: Remove this when we're done
-  get diagnostic() { return JSON.stringify(this.model); }
 }

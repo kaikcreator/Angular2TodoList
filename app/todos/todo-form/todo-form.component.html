@@ -1,26 +1,42 @@
 <div class="container">
     <h2>Add task</h2>
 
-    <form>
-      <div class="form-group">
-        <label for="subject">Subject</label>
-        <input type="text" class="form-control" required>
-      </div>
-
-      <div class="form-group">
-        <label for="content">Content</label>
-        <input type="text" class="form-control" required>
-      </div>
-
-      <div class="form-group">
-        <div class="checkbox">
-          <label for="isImportant">
-            <input type="checkbox"> Is important
-          </label>
+    <div class="col-xs-6">
+      <form>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" class="form-control" required
+            [(ngModel)]="model.subject" name="subject">
         </div>
-      </div>   
 
-      <button type="submit" class="btn btn-default">Submit</button>
-    </form>
+        <div class="form-group">
+          <label for="content">Content</label>
+          <input type="text" class="form-control" required
+            [(ngModel)]="model.content" name="content">
+        </div>
+
+        <div class="form-group">
+          <div class="checkbox">
+            <label for="isImportant">
+              <input type="checkbox"
+                [(ngModel)]="model.isImportant" name="isImportant">
+                Is important
+            </label>
+          </div>
+        </div>   
+
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+    </div>
+    <div class="col-xs-6">
+      <h3>Subject:</h3>
+      {{model.subject}}
+
+      <h3>Content</h3>
+      {{model.content}}
+
+      <h3>is important</h3>
+      {{model.isImportant}}
+    </div>
 
 </div>
